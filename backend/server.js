@@ -1,52 +1,55 @@
-// server.js — Main backend server entry point
+// server.js — Main backend server entry point (yani backend yahi se start hota hai)
 
-// ✅ Load environment variables (like MONGO_URI, PORT)
+// ✅ .env file se environment variables (jaise MONGO_URI, PORT) ko load karte hain
 require('dotenv').config();
 
-const express = require('express');
-const cors = require('cors');
-const mongoose = require('mongoose');
-const path = require('path');
+const express = require('express');       // Express framework ko import kar rahe hain
+const cors = require('cors');             // Cross-Origin Resource Sharing enable karne ke liye
+const mongoose = require('mongoose');     // MongoDB ke saath kaam karne ke liye mongoose
+const path = require('path');             // File path handle karne ke liye (Node.js ka inbuilt module)
 
-// ✅ Create Express app
+// ✅ Express app create kar rahe hain
 const app = express();
 
-// ✅ Import route modules
-const contactRoutes = require('./routes/contactRoutes');
-const bannerRoutes = require('./routes/bannerRoutes');
-const teamRoutes = require('./routes/teamRoutes');
+// ✅ Alag-alag route modules import kar rahe hain
+const contactRoutes = require('./routes/contactRoutes');   // Contact form ke routes
+const bannerRoutes = require('./routes/bannerRoutes');     // Banner image ke routes
+const teamRoutes = require('./routes/teamRoutes');         // Team members ke routes
 
 // ✅ Middleware setup
-app.use(cors());               // Enable Cross-Origin requests
-app.use(express.json());       // Parse incoming JSON request bodies
+app.use(cors());               // CORS enable karte hain taaki frontend backend se baat kar sake
+app.use(express.json());       // Incoming JSON data ko automatically parse karne ke liye
 
-// ✅ Serve static files (images, etc.)
-app.use('/uploads', express.static(path.join(__dirname, 'uploads'))); // general static uploads
-app.use('/img', express.static(path.join(__dirname, 'uploads/img'))); // serve /uploads/img as /img
+// ✅ Static files serve karne ke liye (images ya uploads ko direct access dena)
+// /uploads folder ko publicly access karne ke liye setup
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// ✅ API Routes
-app.use('/api/contact', contactRoutes);   // Contact form
-app.use('/api/banner', bannerRoutes);     // Banner images (from MongoDB)
-app.use('/api/team', teamRoutes);         // Team member data (from MongoDB)
+// /uploads/img folder ko /img ke through access karne ke liye setup
+app.use('/img', express.static(path.join(__dirname, 'uploads/img')));
 
-// ✅ Default root route
+// ✅ API ke routes define kar rahe hain
+app.use('/api/contact', contactRoutes);   // Jab /api/contact pe request aaye to contactRoutes chale
+app.use('/api/banner', bannerRoutes);     // Jab /api/banner pe request aaye to bannerRoutes chale
+app.use('/api/team', teamRoutes);         // Jab /api/team pe request aaye to teamRoutes chale
+
+// ✅ Root route - Jab koi root URL par aaye ("/") to simple message show karo
 app.get('/', (req, res) => {
-  res.send('✅ Server is up and running');
+  res.send('✅ Server is up and running');  // Server status ka confirmation message
 });
 
-// ✅ Remove old hardcoded banner routes (if any)
-// Now handled dynamically with: GET /api/banner/:page
+// ✅ Purane hardcoded banner routes hata diye gaye hain
+// Ab naye dynamic route ka use ho raha hai: GET /api/banner/:page
 
-// ✅ Connect to MongoDB
+// ✅ MongoDB se connect ho rahe hain
 mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
+  useNewUrlParser: true,         // MongoDB driver ka latest URL parser use karna
+  useUnifiedTopology: true       // MongoDB ka naya connection engine use karna
 })
-.then(() => console.log('✅ MongoDB connected'))
-.catch(err => console.error('❌ MongoDB connection error:', err));
+.then(() => console.log('✅ MongoDB connected'))              // Connection successful hone par message
+.catch(err => console.error('❌ MongoDB connection error:', err));  // Agar error aaye to show karo
 
-// ✅ Start server
-const PORT = process.env.PORT || 5000;
+// ✅ Server ko start kar rahe hain
+const PORT = process.env.PORT || 5000;  // Ya to .env ka PORT use karo, ya default 5000
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+  console.log(`🚀 Server running on http://localhost:${PORT}`);  // Server start hone par URL print karo
 });
