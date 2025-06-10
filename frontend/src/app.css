@@ -1,0 +1,562 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700&family=Poppins:wght@400;500;600&display=swap');
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding-top: 56px; /* for fixed navbar */
+}
+/* Copy relevant CSS from your original style.css here */
+ /* Global Font Setup */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0; padding: 0;
+      background: #fff;
+    }
+
+    /* Header Section */
+    /* Navbar is now Bootstrap's navbar, so override only logo */
+    .navbar .logo {
+      color: white;
+      font-weight: 700;
+      font-size: 20px;
+      font-family: 'Libre Baskerville', serif;
+      user-select: none;
+      text-decoration: none;
+    }
+
+    .navbar-nav .nav-link {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: white;
+      transition: color 0.3s ease;      
+    }
+
+    .navbar-nav .nav-link.active {
+      color: #00CCFF;
+    }
+    .navbar-nav .nav-link:not(.active):hover {
+      color: #00CCFF;
+    }
+
+    .nav-link.active {
+  color: #00CCFF !important; /* example: Bootstrap warning yellow */
+  font-weight: bold;
+}
+
+    /* Override navbar background to match original */
+    .navbar-dark {
+      background-color: #1F2138;
+    }
+
+    /* Banner Section */
+    .banner {
+      position: relative;
+      height: 532px;
+      /* background: url('img/img_banner_home.png') center center/cover no-repeat; */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 0 15px;
+
+    }
+
+        .banner h1 {
+      font-family: 'Libre Baskerville', serif;
+      font-weight: 700;
+      font-size: 45px;
+      line-height: 1.2;
+      /* max-width: 900px; */
+      padding-top: 85px;
+    }
+
+    .banner h1 .highlight {
+      color: #00CCFF;
+    }
+
+    .banner p {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      margin-top: 16px;
+      /* max-width: 700px; */
+    }
+
+    .banner-about
+    {
+      position: relative;
+      height: 390px;
+      /* background: url('img/img_about.png') center center/cover no-repeat; */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 0 15px; 
+    }
+
+    /* .banner-contact
+    {
+      position: relative;
+      height: 390px;
+      background: url('img/img_contact.png') center center/cover no-repeat; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 0 15px; 
+    } */
+
+    .banner-about h1
+    {
+      font-family: 'Libre Baskerville', serif;
+      font-weight: 700;
+      font-size: 45px;
+      line-height: 1.2;
+      /* max-width: 900px; */
+      padding-top: 80px;
+    }
+      .banner-contact h1
+    {
+      font-family: 'Libre Baskerville', serif;
+      font-weight: 700;
+      font-size: 45px;
+      line-height: 1.2;
+      /* max-width: 900px; */
+      padding-top: 80px;
+    }
+
+    .banner-about h1 .highlight {
+      color: #00CCFF;
+    }
+
+    .banner-contact h1 .highlight {
+      color: #00CCFF;
+    }
+
+    .banner-about p {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      margin-top: 16px;
+      /* max-width: 700px; */
+    }
+
+      .banner-contact p {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      margin-top: 16px;
+      /* max-width: 700px; */
+    }
+
+
+
+    /* About Us Section */
+    .about-us h2 {
+      font-family: 'Libre Baskerville', serif;
+      font-weight: 700;
+      font-size: 22px;
+      color: #1F2138;
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 0;
+    }
+    .about-us .blue-line {
+      background-color: #00CCFF;
+      height: 4px;
+      width: 64px;
+      margin-bottom: 24px;
+    }
+    .about-us .subheading {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      color: #1F2138;
+      margin-bottom: 12px;
+    }
+    .about-us p {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      color: #847F7E;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .about-us img {
+      border-radius: 8px;
+      object-fit: cover;
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Our Team Section */
+    .our-team {
+      background-color: #E5E5E5;
+      padding-top: 64px;
+      padding-bottom: 64px;
+      text-align: center;
+      min-height: auto;
+    }
+    .our-team h2 {
+      font-family: 'Libre Baskerville', serif;
+      font-weight: 700;
+      font-size: 22px;
+      color: #1F2138;
+      margin-bottom: 8px;
+      display: inline-block;
+      position: relative;
+    }
+    .our-team .blue-line {
+      background-color: #00CCFF;
+      height: 4px;
+      width: 64px;
+      margin: 0 auto 24px auto;
+    }
+    .team-card {
+      background-color: white;
+      border: 1px solid #E5E5E5;
+      padding: 24px;
+      box-sizing: border-box;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border-radius: 8px;
+      height: auto;
+      width: 100%;
+    }
+    .team-card img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
+    .team-card .name {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      color: #222222;
+      margin-bottom: 8px;
+    }
+    .team-card .designation {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      color: #847F7E;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      padding: 64px 20px 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .faq-section h2 {
+      font-family: 'Libre Baskerville', serif;
+      font-weight: 700;
+      font-size: 22px;
+      color: #1F2138;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+    .faq-section .blue-line {
+      background-color: #00CCFF;
+      height: 4px;
+      width: 64px;
+      margin: 0 auto 24px auto;
+    }
+    .faq-tab {
+      background-color: #fff;
+      border: 1px solid #E5E5E5;
+      border-radius: 4px;
+      margin-bottom: 24px;
+      overflow: hidden;
+      cursor: pointer;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      transition: all 0.3s ease;
+    }
+    .faq-tab-header {
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 28px;
+    }
+    .faq-tab-header h3 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      color: #222222;
+      margin: 0;
+    }
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: #00CCFF;
+      transition: transform 0.3s ease;
+    }
+    .faq-tab-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 28px;
+  color: #847F7E;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: left; /* 👈 add this line */
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+    .faq-tab.open .faq-tab-content {
+      padding: 16px 28px 24px 28px;
+      max-height: 500px; /* enough to show content */
+    }
+   
+
+    /* Footer Section */
+    footer {
+      background-color: #1F2138;
+      color: white;
+      text-align: center;
+      padding: 48px 20px 16px 20px;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    footer .footer-logo {
+      /* width: 167px;
+      height: 56px; */
+      /* margin-bottom: 28px; */
+      user-select: none;
+      /* color: white; */
+      /* font-family: 'Libre Baskerville', serif;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 56px; */
+      /* border: 2px solid white;
+      border-radius: 8px; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    } 
+    footer nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+      margin-top: 48px;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    footer nav a {
+      color: white;
+      text-decoration: none;
+      user-select: none;
+      transition: color 0.3s ease;
+    }
+    footer nav a.active {
+      color: #00CCFF;
+    }
+    footer nav a:not(.active):hover {
+      color: #00CCFF;
+    }
+    footer .footer-line {
+      width: 100%;
+      /* max-width: 900px; */
+      border-bottom: 1px solid #6E6B6B;
+      margin-bottom: 16px;
+    }
+    
+    footer .footer-text {
+      font-weight: 400;
+      font-size: 14px;
+      color: #ffffff;
+      /* max-width: 900px; */
+      user-select: none;
+    }
+
+ .contact-us h2 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1F2138;
+}
+
+.blue-line {
+  background-color: #00CCFF;
+  height: 4px;
+  width: 64px;
+}
+
+/* Input Tab Style */
+.input-tab {
+  height: 48px;
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  min-width: 280px;
+  max-width: 100%;
+}
+
+.input-tab input {
+  border: none;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: rgba(51, 65, 85, 0.48);
+  width: 100%;
+  background: transparent;
+}
+
+.input-tab img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Message Box */
+.message-box textarea {
+  width: 100%;
+  height: 120px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  padding: 12px 16px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #334155;
+  resize: vertical;
+  background-color: #ffffff;
+  outline: none;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 159px;
+  height: 40px;
+  background-color: #00CCFF;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #00b4e6;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: white;
+  margin: 0 10px;
+}
+
+.footer-link.active {
+  color: #00CCFF; /* Bootstrap warning yellow */
+  font-weight: bold;
+}
+
+
+
+
+
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .banner h1 {
+        font-size: 32px;
+      }
+      .about-us h2 {
+        font-size: 18px;
+        margin-top: 20px; /* Added margin top to avoid sticking to image */
+      }
+      .our-team h2, .faq-section h2 {
+        font-size: 18px;
+      }
+      .team-card .name {
+        font-size: 18px;
+      }
+      .team-card .designation {
+        font-size: 14px;
+      }
+
+        .banner-about h1
+    {
+      font-family: 'Libre Baskerville', serif;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 1.2;
+      /* max-width: 900px; */
+      padding-top: 80px;
+    }
+
+    .banner-about h1 .highlight {
+      color: #00CCFF;
+    }
+
+    .banner-about p {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      margin-top: 16px;
+      /* max-width: 700px; */
+    }
+
+         .banner-contact h1
+    {
+      font-family: 'Libre Baskerville', serif;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 1.2;
+      /* max-width: 900px; */
+      padding-top: 80px;
+    }
+
+    .banner-contact h1 .highlight {
+      color: #00CCFF;
+    }
+
+    .banner-contact p {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      margin-top: 16px;
+      /* max-width: 700px; */
+    }
+
+     .input-tab {
+    width: 100%;
+  }
+  .submit-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+    }
